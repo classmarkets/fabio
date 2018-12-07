@@ -64,6 +64,12 @@ func (t *Target) AccessDeniedHTTP(r *http.Request) bool {
 
 // AccessDeniedTCP checks rules on the target for TCP proxy routes.
 func (t *Target) AccessDeniedTCP(c net.Conn) bool {
+	// c.RemoteAddr() may block for a considerable amount of time, depending on
+	// the listener's ProxyHeaderTimeout value. Don't call it unless necessary.
+	if len(t.accessRules) == 0 {
+		return false
+	}
+
 	var addr *net.TCPAddr
 	var ok bool
 	// validate remote address assertion
@@ -73,14 +79,14 @@ func (t *Target) AccessDeniedTCP(c net.Conn) bool {
 	}
 	// check remote connection address
 	if t.denyByIP(addr.IP) {
-			return true
+		return true
 	}
 	// default allow
 	return false
 }
 
 func (t *Target) denyByIP(ip net.IP) bool {
-	if ip == nil || t.accessRules == nil {
+	if ip == nil || len(t.accessRules) == 0 {
 		return false
 	}
 

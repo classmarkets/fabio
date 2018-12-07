@@ -25,7 +25,10 @@ func ListenTCP(laddr string, cfg *tls.Config) (net.Listener, error) {
 	ln = tcpKeepAliveListener{ln.(*net.TCPListener)}
 
 	// enable PROXY protocol support
-	ln = &proxyproto.Listener{Listener: ln}
+	ln = &proxyproto.Listener{
+		Listener:           ln,
+		ProxyHeaderTimeout: time.Millisecond,
+	}
 
 	// enable TLS
 	if cfg != nil {

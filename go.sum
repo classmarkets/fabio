@@ -19,6 +19,8 @@ github.com/armon/go-metrics v0.0.0-20180917152333-f0300d1749da h1:8GUt8eRujhVEGZ
 github.com/armon/go-metrics v0.0.0-20180917152333-f0300d1749da/go.mod h1:Q73ZrmVTwzkszR9V5SSuryQ31EELlFMUz1kKyl939pY=
 github.com/armon/go-proxyproto v0.0.0-20150207025855-609d6338d3a7 h1:AuTQOaYRBRtfDwY9ksr2sLXBgNvI5Mi6nhPdKdLE8Uw=
 github.com/armon/go-proxyproto v0.0.0-20150207025855-609d6338d3a7/go.mod h1:QmP9hvJ91BbJmGVGSbutW19IC0Q9phDCLGaomwTJbgU=
+github.com/armon/go-proxyproto v0.0.0-20160713153720-49fdb5cfabab h1:LLmA7MV5LgfNZzli5jfBwhkGA+3c7XrlTNn3PBqbdhA=
+github.com/armon/go-proxyproto v0.0.0-20160713153720-49fdb5cfabab/go.mod h1:QmP9hvJ91BbJmGVGSbutW19IC0Q9phDCLGaomwTJbgU=
 github.com/armon/go-radix v1.0.0 h1:F4z6KzEeeQIMeLFa97iZU6vupzoecKdU5TX24SNppXI=
 github.com/armon/go-radix v1.0.0/go.mod h1:ufUuZ+zHj4x4TnLV4JWEpy2hxWSpsRywHrMgIH9cCH8=
 github.com/aws/aws-sdk-go v1.15.76 h1:AZB4clNWIk13YJaTm07kqyrHkj7gZYBQCgyTh/v4Sec=
